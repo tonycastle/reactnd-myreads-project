@@ -11,10 +11,11 @@ class App extends React.Component {
 	//load the books into state
  componentDidMount() {
     BooksAPI.getAll()
-      .then((books) => this.setState({
-        	books: books
-        })
-      )
+      .then((books) => {
+        this.setState(() => ({
+          books
+        }))
+      })
   }
 
   render() {
